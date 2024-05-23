@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: pokemon;
+    src: url(fonts/Pokemon\ Solid.ttf) format(truetype);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(to right, #43c6ac, #009cab, #0071a0, #004483, #191654);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: poppins, sans-serif;
+}
+
+.titulo{
+    font-family: pokemon;
+    font-size: 50px;
+    color: white;
+    margin: auto;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0px;
+}
+
+.cardPokemon{
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+
+.fotoPokemon{
+    background-color: rgba(100, 100, 100, 0.3);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+}
+
+.fotoPokemon img{
+    max-width: 90%;
+}
+
+.conteudoPokemon{
+    margin-top: 20px;
+}
+
+.identificador{
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    color: white;
+    text-align: start;
+    
+}
+
+.nomePokemon{
+    margin: 15px 0 7px;
+    letter-spacing: 1.2px;
+}
+
+.tipoPokemon{
+    display: flex;
+
+}
+
+.imgIcon{
+    height: 20px;
+    width: 20px;
+    text-align: left;
+    border-radius: 15px;
+    margin-left: 10px;
+    font-size: 12px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+
+.imgIcon p{ 
+    margin-right: 5px;
+
+}
+
+.imgIcon:hover{
+    width: 70px;
+    transition: 1s;
+}
+
+.imgIcon img{
+    width: 20px;
+    align-items: center;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    justify-content: start;
+}
+
+.cardPokemonPlanta{
+    background-image: linear-gradient(0deg, #ffffff 58%, #63BB5B 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.cardPokemonPlanta .imgIcon{
+    background: #63BB5B;
+}
+
+.cardPokemonFogo{
+    background-image: linear-gradient(0deg, #ffffff 58%, #FF9C54 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+.cardPokemonFogo .imgIcon{
+    background: #FF9C54;
+}
+.cardPokemonEletrico{
+    background-image: linear-gradient(0deg, #ffffff 58%, #F3D23B 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+.cardPokemonEletrico .imgIcon{
+    background: #F3D23B;
+}
+.cardPokemonAgua{
+    background-image: linear-gradient(0deg, #ffffff 58%, #4D90D5 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.cardPokemonAgua .imgIcon{
+    background: #4D90D5;
+}
+.cardPokemonNormal{
+    background-image: linear-gradient(0deg, #ffffff 58%, #9099A1 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.cardPokemonNormal .imgIcon{
+    background: #9099A1;
+}
+.cardPokemonLutador{
+    background-image: linear-gradient(0deg, #ffffff 58%, #CE4069 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+.cardPokemonLutador .imgIcon{
+    background: #CE4069;
+}
+.cardPokemonDragao{
+    background-image: linear-gradient(0deg, #ffffff 58%, #096DC4 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+.cardPokemonDragao .imgIcon{
+    background: #096DC4;
+}
+
+.cardPokemonInseto{
+    background-image: linear-gradient(0deg, #ffffff 58%, #90C12C 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+.cardPokemonInseto .imgIcon{
+    background: #90C12C ;
+}
+
+.cardPokemonPsiquico{
+    background-image: linear-gradient(0deg, #ffffff 58%, #F97176 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.cardPokemonPsiquico .imgIcon{
+    background: #F97176;
+}
+
+.cardPokemonFada{
+    background-image: linear-gradient(0deg, #ffffff 58%, #EC8FE6 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+.cardPokemonFada .imgIcon{
+    background: #EC8FE6;
+}
+.cardPokemonVeneno{
+    background-image: linear-gradient(0deg, #ffffff 58%, #AB6AC8 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+.cardPokemonVeneno .imgIcon{
+    background: #AB6AC8;
+}
+.cardPokemonRocha{
+    background-image: linear-gradient(0deg, #ffffff 58%, #C7B78B 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+.cardPokemonRocha .imgIcon{
+    background: #C7B78B;
+}
+.cardPokemonVoador{
+    background-image: linear-gradient(0deg, #ffffff 58%, #92AADE 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+.cardPokemonVoador .imgIcon{
+    background: #92AADE;
+}
+
+.cardPokemonTerrestre{
+    background-image: linear-gradient(0deg, #ffffff 58%, #D97746 20%);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 15px;
+    padding: 20px;
+    max-width: 1200px;
+}
+.cardPokemonTerrestre .imgIcon{
+    background:#D97746;
+}
