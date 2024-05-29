@@ -1,7 +1,7 @@
 const pokemonContainer = document.querySelector("#container");
 const quantidadePokemon = 151
 const cores = {
-    fire: 'cardPokemonFogo' || '#FF9C54',
+    fire: 'cardPokemonFogo',
     grass: 'cardPokemonPlanta',
     electric: 'cardPokemonEletrico',
     water: 'cardPokemonAgua',
@@ -48,32 +48,46 @@ const buscarPokemons = async (id) => {
     criarCardPokemon(dados)
 }
 
+
 const criarCardPokemon = (pokemon) => {
     const cardPokemon = document.createElement('div')
     cardPokemon.classList.add("cardPokemon")
 
     const nome = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
-    const id = pokemon.id.toString().padStart(3, '0')
+    const id = pokemon.id
+    const idNumero = pokemon.id.toString().padStart(3, '0')
 
     const pokemonTipo = pokemon.types.map(type => type.type.name)
     const type = tipoPokemon.find(type => pokemonTipo.indexOf(type) > -1)
     const cor = cores[type]
-    const corIcon = coresIcon[type]
 
     cardPokemon.style.backgroundColor = cardPokemon.classList.add(cor)
 
-    const pokemonInnerHTML = `<span class="identificador">#${id}</span>
+    const pokemonInnerHTML = `<span class="identificador" data-id="${id}">#${idNumero}</span>
     <div class="fotoPokemon">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
     </div>
+    <button type="button" class="botaoTime">Adicionar ao time</button> 
     <div class="conteudoPokemon">
         <h3 class="nomePokemon">${nome}</h3>
         <small class="tipoPokemon">Tipo: <div class="imgIcon" background: ${type};><img src="pokemon_icon/Pokemon_${type}.png" alt=""><p>${type}</p></div></small>
-    </div>`
+        </div>`
 
     cardPokemon.innerHTML = pokemonInnerHTML
 
     pokemonContainer.appendChild(cardPokemon)
+
+    cardPokemon.addEventListener('click', (event) =>{
+    let posicaoClick = event.target;
+    if(posicaoClick.classList.contains('botaoTime')){
+        let pokemonId = posicaoClick.parentElement
+        alert(pokemonId.children[0].dataset.id)
+    }
+})
 }
 
 listaPokemons()
+
+
+
+
