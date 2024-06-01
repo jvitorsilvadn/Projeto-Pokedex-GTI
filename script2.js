@@ -1,5 +1,5 @@
-const pokemonContainer = document.querySelector("#container");
-const quantidadePokemon = 151
+const pokemonContainer = document.querySelector("#containerTime2");
+const quantidadePokemon = 6
 let arrayTime = []
 let arrayTimeCompleto = []
 let parametros = []
@@ -36,11 +36,39 @@ const coresIcon = {
     fighting: '#E6E0D4',
     normal: '#F5F5F5'
 }
+
+const url = new URL(window.location.href);
+const searchParams = url.searchParams;
+
+const time1 = searchParams.get("time1");
+const time2 = searchParams.get("time2");
+const time3 = searchParams.get("time3");
+const time4 = searchParams.get("time4");
+const time5 = searchParams.get("time5");
+const time6 = searchParams.get("time6");
+
+let pokemonsTime = [time1, time2, time3, time4, time5, time6];
 const tipoPokemon = Object.keys(cores);
 
+function criarBotao()
+{
+    const botaoEnviar = document.createElement('button')
+    botaoEnviar.classList.add("enviarTime")
+
+    const botaoInnerHTML = '<p onclick="retornarPokedex()">Retornar a Pokedex</p>'
+
+    botaoEnviar.innerHTML = botaoInnerHTML
+    pokemonContainer.appendChild(botaoEnviar)
+}
+
+function retornarPokedex(){
+    var url = "index.html";
+    window.location = url;
+}
+
 const listaPokemons = async () => {
-    for (let i = 1; i <= quantidadePokemon; i++) {
-        await buscarPokemons(i)
+    for (let i = 0; i <= quantidadePokemon; i++) {
+        await buscarPokemons(pokemonsTime[i])
     }
 }
 
@@ -51,26 +79,9 @@ const buscarPokemons = async (id) => {
     criarCardPokemon(dados)
 }
 
-function criarBotao()
-{
-    const botaoEnviar = document.createElement('button')
-    botaoEnviar.classList.add("enviarTime")
-
-    const botaoInnerHTML = '<p onclick="enviarTime()">VISUALIZAR TIME</p>'
-
-    botaoEnviar.innerHTML = botaoInnerHTML
-    pokemonContainer.appendChild(botaoEnviar)
-}
-
-function enviarTime(){
-    var url = "index2.html?"+"&time1="+parametros[0]+"&time2="+parametros[1]+"&time3="+parametros[2]+"&time4="+parametros[3]+"&time5="+parametros[4]+"&time6="+parametros[5];
-    window.location = url;
-}
-
-
 const criarCardPokemon = (pokemon) => {
     const cardPokemon = document.createElement('div')
-    cardPokemon.classList.add("cardPokemon")
+    cardPokemon.classList.add("cardPokemon1")
 
     const nome = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
     const id = pokemon.id
@@ -86,7 +97,7 @@ const criarCardPokemon = (pokemon) => {
     <div class="fotoPokemon">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png">
     </div>
-    <button type="button" class="botaoTime">ADICIONAR AO TIME</button> 
+
     <div class="conteudoPokemon">
         <h3 class="nomePokemon">${nome}</h3>
         <small class="tipoPokemon">Tipo: <div class="imgIcon" background: ${type};><img src="pokemon_icon/Pokemon_${type}.png" alt=""><p>${type}</p></div></small>
@@ -96,31 +107,8 @@ const criarCardPokemon = (pokemon) => {
 
     pokemonContainer.appendChild(cardPokemon)
 
-    cardPokemon.addEventListener('click', (event) =>{
-    let posicaoClick = event.target;
-    if(posicaoClick.classList.contains('botaoTime')){
-        let pokemonId = posicaoClick.parentElement
-        let novoPokemon = pokemonId.children[0].dataset.id;
-        arrayTime.push(novoPokemon);
-        let arrayOrg = [... new Set(arrayTime)]
-        arrayOrg.sort((a,b) => a - b);
-        arrayOrg.length = 6
-        const count = arrayOrg.reduce((acc, num) => {
-            if (num != null) {
-              return acc + 1;
-            } else {
-              return acc;
-            }
-          }, 0);
-        alert(`Foram adicionados ` + count +` pokemons ao seu time`)
+    criarBotao()
 
-        if (arrayOrg[5] != null) {
-            arrayTimeCompleto = arrayOrg
-            parametros = arrayTimeCompleto
-            criarBotao()
-        }
-    }
-})
 }
 
 listaPokemons()

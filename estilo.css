@@ -42,10 +42,46 @@ body {
   align-items: center;
   justify-content: space-between;
   max-width: 1300px;
+}
+
+#containerTime2{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
   margin: 0px;
 }
 
+.enviarTime{
+  width: 500px;
+  position: fixed;
+  bottom: 50px;
+  z-index: 2;
+  background: linear-gradient(    to left,
+  #43c6ac,
+  #009cab,
+  #0071a0,
+  #004483,
+  #191654);
+  height: 30px;
+  border-radius: 10px;
+  border: 0;
+  font-family: poppins, sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 0 2px;
+  left: 33%;
+}
+
+.enviarTime:hover{
+  scale: 1.4;
+}
+
 .cardPokemon {
+  position: relative;
   border-radius: 15px;
   box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
   margin: 15px;
@@ -54,6 +90,19 @@ body {
   width: 170px;
   transition: 1s;
   overflow: hidden;
+  z-index: 1;
+}
+.cardPokemon1 {
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  margin: 15px;
+  padding: 20px;
+  max-width: 270px;
+  width: 170px;
+  transition: 1s;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .botaoTime {
@@ -70,17 +119,13 @@ body {
   height: 0px;
   text-align: center;
   width: 0px;
-  background: #1ecd97;
-  color: #fff;
   letter-spacing: 1px;
   text-shadow: 0;
   align-items: center;
   place-content: center;
-  border-radius: 20px;
-}
-
-.botaoTime{
-  visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 4px solid white;
 }
 
 .cardPokemon:hover .botaoTime {
@@ -97,10 +142,6 @@ body {
   height: 40px;
 }  
 
-.botaoTime:hover {
-  color: #1ecd97;
-  background: white;
-}
 
 .cardPokemon:hover {
   width: 270px;
@@ -198,7 +239,11 @@ body {
   padding: 20px;
 }
 
-.cardPokemonPlanta .imgIcon {
+.cardPokemonPlanta .botaoTime{
+  background: #63bb5b;
+}
+
+.cardPokemonPlanta .imgIcon  {
   background: #63bb5b;
 }
 
@@ -212,6 +257,11 @@ body {
 .cardPokemonFogo .imgIcon {
   background: #ff9c54;
 }
+
+.cardPokemonFogo .botaoTime {
+  background: #ff9c54;
+}
+
 .cardPokemonEletrico {
   background-image: linear-gradient(0deg, #ffffff 58%, #f3d23b 20%);
   border-radius: 15px;
@@ -222,6 +272,11 @@ body {
 .cardPokemonEletrico .imgIcon {
   background: #f3d23b;
 }
+
+.cardPokemonEletrico .botaoTime {
+  background: #f3d23b;
+}
+
 .cardPokemonAgua {
   background-image: linear-gradient(0deg, #ffffff 58%, #4d90d5 20%);
   border-radius: 15px;
@@ -231,6 +286,10 @@ body {
 }
 
 .cardPokemonAgua .imgIcon {
+  background: #4d90d5;
+}
+
+.cardPokemonAgua .botaoTime {
   background: #4d90d5;
 }
 .cardPokemonNormal {
@@ -244,6 +303,11 @@ body {
 .cardPokemonNormal .imgIcon {
   background: #9099a1;
 }
+
+.cardPokemonNormal .botaoTime {
+  background: #9099a1;
+}
+
 .cardPokemonLutador {
   background-image: linear-gradient(0deg, #ffffff 58%, #ce4069 20%);
   border-radius: 15px;
@@ -252,6 +316,10 @@ body {
   padding: 20px;
 }
 .cardPokemonLutador .imgIcon {
+  background: #ce4069;
+}
+
+.cardPokemonLutador .botaoTime {
   background: #ce4069;
 }
 .cardPokemonDragao {
@@ -265,6 +333,10 @@ body {
   background: #096dc4;
 }
 
+.cardPokemonDragao .botaoTime {
+  background: #096dc4;
+}
+
 .cardPokemonInseto {
   background-image: linear-gradient(0deg, #ffffff 58%, #90c12c 20%);
   border-radius: 15px;
@@ -273,6 +345,10 @@ body {
   padding: 20px;
 }
 .cardPokemonInseto .imgIcon {
+  background: #90c12c;
+}
+
+.cardPokemonInseto .botaoTime {
   background: #90c12c;
 }
 
@@ -288,6 +364,10 @@ body {
   background: #f97176;
 }
 
+.cardPokemonPsiquico .botaoTime {
+  background: #f97176;
+}
+
 .cardPokemonFada {
   background-image: linear-gradient(0deg, #ffffff 58%, #ec8fe6 20%);
   border-radius: 15px;
@@ -298,6 +378,11 @@ body {
 .cardPokemonFada .imgIcon {
   background: #ec8fe6;
 }
+
+.cardPokemonFada .botaoTime {
+  background: #ec8fe6;
+}
+
 .cardPokemonVeneno {
   background-image: linear-gradient(0deg, #ffffff 58%, #ab6ac8 20%);
   border-radius: 15px;
@@ -308,6 +393,10 @@ body {
 .cardPokemonVeneno .imgIcon {
   background: #ab6ac8;
 }
+
+.cardPokemonVeneno .botaoTime {
+  background: #ab6ac8;
+}
 .cardPokemonRocha {
   background-image: linear-gradient(0deg, #ffffff 58%, #c7b78b 20%);
   border-radius: 15px;
@@ -316,6 +405,10 @@ body {
   padding: 20px;
 }
 .cardPokemonRocha .imgIcon {
+  background: #c7b78b;
+}
+
+.cardPokemonRocha .botaoTime {
   background: #c7b78b;
 }
 .cardPokemonVoador {
@@ -329,6 +422,10 @@ body {
   background: #92aade;
 }
 
+.cardPokemonVoador .botaoTime {
+  background: #92aade;
+}
+
 .cardPokemonTerrestre {
   background-image: linear-gradient(0deg, #ffffff 58%, #d97746 20%);
   border-radius: 15px;
@@ -339,3 +436,8 @@ body {
 .cardPokemonTerrestre .imgIcon {
   background: #d97746;
 }
+
+.cardPokemonTerrestre .botaoTime {
+  background: #d97746;
+}
+
